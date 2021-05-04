@@ -46,11 +46,13 @@
 
 .rankImage {
   width: 25px;
+  height: auto;
   transform: translateZ(0);
 }
 
 .rankImageResized {
   width: 35px;
+  height: auto;
   margin-left: -0.28rem;
   transform: translateZ(0);
 }
