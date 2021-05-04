@@ -28,14 +28,14 @@ export function Pagination() {
 
         const img = (src: string, altTitle: string, className = styles.rankImage) => <img src={src} alt={altTitle} title={altTitle} className={className}/>;
         
-        if (rank === 1) return img(rankEight, "Rank Eight", styles.rankImageResized);
-        else if (rank <= Math.ceil(0.03 * NUM_STUDENTS) /* Top 3% */) return img(rankSeven, "Rank Seven", styles.rankImageResized);
-        else if (rank <= Math.ceil(0.06 * NUM_STUDENTS) /* Top 6% */) return img(rankSix, "Rank Six");
-        else if (rank <= Math.ceil(0.10 * NUM_STUDENTS) /* Top 10% */) return img(rankFive, "Rank Five");
-        else if (rank <= Math.ceil(0.20 * NUM_STUDENTS) /* Top 20% */) return img(rankFour, "Rank Four");
-        else if (rank <= Math.ceil(0.40 * NUM_STUDENTS) /* Top 40% */) return img(rankThree, "Rank Three");
-        else if (rank <= Math.ceil(0.60 * NUM_STUDENTS) /* Top 60% */) return img(rankTwo, "Rank Two");
-        else return img(rankOne, "Rank One");
+        if (rank === 1) return img(rankEight, "Diamond", styles.rankImageResized);
+        else if (rank <= Math.ceil(0.03 * NUM_STUDENTS) /* Top 3% */) return img(rankSeven, "Platinum", styles.rankImageResized);
+        else if (rank <= Math.ceil(0.06 * NUM_STUDENTS) /* Top 6% */) return img(rankSix, "Gold");
+        else if (rank <= Math.ceil(0.10 * NUM_STUDENTS) /* Top 10% */) return img(rankFive, "Silver");
+        else if (rank <= Math.ceil(0.20 * NUM_STUDENTS) /* Top 20% */) return img(rankFour, "Copper");
+        else if (rank <= Math.ceil(0.40 * NUM_STUDENTS) /* Top 40% */) return img(rankThree, "Bronze");
+        else if (rank <= Math.ceil(0.60 * NUM_STUDENTS) /* Top 60% */) return img(rankTwo, "Iron");
+        else return img(rankOne, "Recruit");
     }
 
     function getPagination() {
