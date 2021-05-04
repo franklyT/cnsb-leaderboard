@@ -1,8 +1,8 @@
-import React, {useContext, useEffect} from 'react';
+import React, { useContext, useEffect } from 'react';
 import firebase from "firebase/app";
 import 'firebase/database';
 import styles from './Leaderboard.module.scss';
-import {Pagination} from './Pagination/Pagination';
+import { Pagination } from './Pagination/Pagination';
 import Labels from '../../shared/components/Labels/Labels';
 import Loader from '../../shared/components/Loader/Loader';
 import UIContext from "../../shared/contexts/UIContext";
@@ -20,7 +20,7 @@ firebase.initializeApp({
 });
 
 function Leaderboard() {
-    const {sortedLeaderboard, setSortedLeaderboard} = useContext(UIContext);
+    const { sortedLeaderboard, setSortedLeaderboard } = useContext(UIContext);
 
     useEffect(() => {
         firebase
@@ -38,9 +38,9 @@ function Leaderboard() {
 
     return (
         <div className={styles.flex}>
-            <Labels labels={["Rank", "Student Name", "Ninja Points"]} />
-            {sortedLeaderboard.length > 1 || <Loader/>}
-            <Pagination/>
+            <Labels labels={[["Rank", { maxWidth: '1%' }], ["Student Name", { maxWidth: '40%' }], ["Ninja Points", { marginLeft: "10rem", maxWidth: '100%' }]]} />
+            {sortedLeaderboard.length > 1 || <Loader />}
+            <Pagination />
         </div>
     );
 }

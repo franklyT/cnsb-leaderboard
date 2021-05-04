@@ -80,9 +80,9 @@ export function Pagination() {
 
                     return (
                         <div className={'row'} key={index}>
-                            <span className={'col'} style={{maxWidth: "10%", marginLeft: "1em", alignSelf: "center"}}> {calcTrophy(index)} </span>
+                            <span className={'col'} style={{maxWidth: "5%", marginLeft: "1rem", marginRight: "2.8rem", alignSelf: "center"}}> {calcTrophy(index)} </span>
                             <span className={'col'} style={{fontWeight: 700, alignSelf: "center"}}> {STUDENT_NAME} </span>
-                            <span className={'col'} style={{fontFamily: "monospace", fontSize: "1.5rem", marginRight: "8rem", alignSelf: "center", alignItems: "flex-end", textAlign:"right"}}> {STUDENT_NP} </span>
+                            <span className={'col'} style={{fontFamily: "monospace", fontSize: "1.5rem", marginRight: "11rem", alignSelf: "center", alignItems: "flex-end", textAlign:"right"}}> {STUDENT_NP} </span>
                         </div>
                     )
                 })}

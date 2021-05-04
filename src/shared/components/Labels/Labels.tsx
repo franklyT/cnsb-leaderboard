@@ -3,15 +3,14 @@ import React from "react";
 
 export function Labels(props: any) {
     const {labels} = props;
-
+    
     return (
-        <div className={`${styles.row} ${styles.labels}`}>
-            {/* <span className={'col'} style={{maxWidth: "10%"}}> Rank </span> */}
-            {/* <span className={'col'}> Student Name </span> */}
-            {/* <span className={'col'} style={{textAlign: "right", marginRight: "3rem"}}> Ninja Points </span> */}
-            
-            {labels.map((label: string)=> {
-                return <span className={'col'}> {label} </span>;
+        <div className={`${styles.row} ${styles.labels}`} style={labels.every((label: any) => Array.isArray(label) === false) ? {justifyContent: 'auto'} : {}}>            
+            {labels.map((label: any)=> {
+                let name, extraStyles;
+                if (typeof label === 'object') [name, extraStyles] = label; else name = label;
+
+                return <div className={'col'} style={extraStyles} key={name}> {name} </div>;
             })}
         </div>
     )
