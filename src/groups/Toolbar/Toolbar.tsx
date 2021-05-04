@@ -7,7 +7,7 @@ export function Toolbar() {
     const {activeMenu, setActiveMenu} = useContext(MenuContext);
 
     return (
-        <div className={`row ${styles.labels}`} style={{justifyContent: "left"}}>
+        <div className={`row ${styles.labels}`} style={{justifyContent: "center"}}>
             {Object.values(ActivePage).map((page: ActivePage) => {
                 return (
                     <span key={page} onClick={() => setActiveMenu(page)}
