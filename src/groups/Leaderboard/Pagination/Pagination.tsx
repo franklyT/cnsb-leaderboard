@@ -2,6 +2,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import UIContext from '../../../shared/contexts/UIContext';
 import styles from './Pagination.module.scss';
 
+import rankOne from './images/one.webp';
+import rankTwo from './images/two.webp'
+import rankThree from './images/three.webp'
+import rankFour from './images/four.webp'
+import rankFive from './images/five.webp'
+import rankSix from './images/six.webp'
+import rankSeven from './images/seven.png'
+import rankEight from './images/eight.webp';
+
 export function Pagination() {
     const { sortedLeaderboard } = useContext(UIContext);
     let [activePage, setActivePage] = useState(0);
@@ -16,19 +25,17 @@ export function Pagination() {
 
     function calcTrophy(rank: number) {
         rank += 1;
-        return <span> #{rank} </span>;
 
-        // TODO: New icons before re-implementation, but the distributions are good
-        // (Apparently I accidentally stole the original icons from Overwatch)
-        // const img = (src: string, altTitle: string) => <img src={src} alt={altTitle} title={altTitle} style={{width: "3rem", transform: "translateZ(0)"}} />;
-        // if (rank === 1) return img(rankEight, "Rank Eight");
-        // else if (rank <= Math.ceil(0.03 * NUM_STUDENTS) /* Top 3% */) return img(rankSeven, "Rank Seven");
-        // else if (rank <= Math.ceil(0.06 * NUM_STUDENTS) /* Top 6% */) return img(rankSix, "Rank Six");
-        // else if (rank <= Math.ceil(0.10 * NUM_STUDENTS) /* Top 10% */) return img(rankFive, "Rank Five");
-        // else if (rank <= Math.ceil(0.20 * NUM_STUDENTS) /* Top 20% */) return img(rankFour, "Rank Four");
-        // else if (rank <= Math.ceil(0.40 * NUM_STUDENTS) /* Top 40% */) return img(rankThree, "Rank Three");
-        // else if (rank <= Math.ceil(0.60 * NUM_STUDENTS) /* Top 60% */) return img(rankTwo, "Rank Two");
-        // else if (true) return img(rankOne, "Rank One");
+        const img = (src: string, altTitle: string, className = styles.rankImage) => <img src={src} alt={altTitle} title={altTitle} className={className}/>;
+        
+        if (rank === 1) return img(rankEight, "Rank Eight", styles.rankImageResized);
+        else if (rank <= Math.ceil(0.03 * NUM_STUDENTS) /* Top 3% */) return img(rankSeven, "Rank Seven", styles.rankImageResized);
+        else if (rank <= Math.ceil(0.06 * NUM_STUDENTS) /* Top 6% */) return img(rankSix, "Rank Six");
+        else if (rank <= Math.ceil(0.10 * NUM_STUDENTS) /* Top 10% */) return img(rankFive, "Rank Five");
+        else if (rank <= Math.ceil(0.20 * NUM_STUDENTS) /* Top 20% */) return img(rankFour, "Rank Four");
+        else if (rank <= Math.ceil(0.40 * NUM_STUDENTS) /* Top 40% */) return img(rankThree, "Rank Three");
+        else if (rank <= Math.ceil(0.60 * NUM_STUDENTS) /* Top 60% */) return img(rankTwo, "Rank Two");
+        else return img(rankOne, "Rank One");
     }
 
     function getPagination() {

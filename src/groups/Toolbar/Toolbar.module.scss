@@ -21,8 +21,31 @@
 
 .label {
   cursor: pointer;
+
+  opacity: 0.7;
 }
 
 .active {
-  color: lime;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px white;
+  animation: pulse 01s infinite ease-in-out;
+  opacity: 1;
+
+  &:after {
+    text-shadow: none;
+  }
+
+  @keyframes pulse {
+    0% {
+      text-shadow: 0px 0px 4px black, 0 0 25px blue, 0 0 5px white;
+    }
+
+    50% {
+      text-shadow: 0px 0px 10px black, 0 0 25px blue, 0 0 5px white;
+    }
+
+    100% {
+      text-shadow: 0px 0px 4px black, 0 0 25px blue, 0 0 5px white;
+    }
+  }
 }

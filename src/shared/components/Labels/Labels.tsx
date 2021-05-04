@@ -5,7 +5,7 @@ export function Labels(props: any) {
     const {labels} = props;
 
     return (
-        <div className={`${'row'} ${styles.labels}`}>
+        <div className={`${styles.row} ${styles.labels}`}>
             {/* <span className={'col'} style={{maxWidth: "10%"}}> Rank </span> */}
             {/* <span className={'col'}> Student Name </span> */}
             {/* <span className={'col'} style={{textAlign: "right", marginRight: "3rem"}}> Ninja Points </span> */}
