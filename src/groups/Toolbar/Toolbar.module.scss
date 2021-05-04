@@ -1,0 +1,28 @@
+.labels {
+  background-color: rgb(80, 150, 228);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  user-select: none;
+  border-radius: 1rem;
+
+  span:not(:last-child) {
+    &:after {
+      content: "|";
+      color: white;
+      margin-left: 0.3rem;
+      margin-right: 0.3rem;
+    }
+  }
+}
+
+.label {
+  cursor: pointer;
+}
+
+.active {
+  color: lime;
+}

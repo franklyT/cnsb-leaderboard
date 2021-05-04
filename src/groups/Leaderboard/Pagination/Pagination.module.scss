@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.writtenPage {
+    animation: fadeIn 0.4s ease-in;
+
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+}
+
+.tableContainer {
+    div {
+      min-height: 3rem;
+    }
+    div:nth-child(even) {
+        background-color: #f0f0f0;
+      }
+}
+
+.paginated {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+
+  .paginatedActive {
+    background-color: rgb(80, 150, 228);
+    color: white;
+    border: 1px solid rgb(80, 150, 228);
+  }
