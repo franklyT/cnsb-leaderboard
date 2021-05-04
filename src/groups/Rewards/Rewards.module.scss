@@ -51,9 +51,13 @@
     font-family: monospace;
     font-size: 1.7rem;
     color: black;
-    text-align: left;
-    width: calc(100%);
-    text-align: center;
+    text-align: right;
+    width: 34%;
+
+    &:last-child {
+        margin-right: -2rem;
+        text-align: left;
+    }
 }
 
 .morePoints {

@@ -6,7 +6,7 @@ export function Rewards() {
     ['3,000', 15],
     ['5,500', 10],
     ['10,000', 20],
-    ['20000', 50],
+    ['20,000', 50],
     ['35,000', 75],
     ['50,000', 100],
   ];
@@ -28,7 +28,7 @@ export function Rewards() {
 
         <div className={styles.morePoints}>
           <p> Want more points? </p>
-          <p> Answer riddles, complete projects, and ask for more things to do! There are endless ways to earn points at Code Ninjas ©. </p>
+          <p> Answer riddles, complete projects, and ask for more things to do! There are endless ways to earn points at Code Ninjas. </p>
         </div>
       </div>
     </div>
