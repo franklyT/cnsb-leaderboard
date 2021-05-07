@@ -3,7 +3,7 @@ import styles from "./Rewards.module.scss";
 
 export function Rewards() {
   const rewards = [
-    ['3,000', 15],
+    ['3,000', 5],
     ['5,500', 10],
     ['10,000', 20],
     ['20,000', 50],
