@@ -12,7 +12,7 @@
   span:not(:last-child) {
     &:after {
       content: "|";
-      color: white;
+      color: white !important;
       margin-left: 0.3rem;
       margin-right: 0.3rem;
     }
