@@ -25,12 +25,9 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-
-$blend: black;
-
 .active {
   color: white;
-  text-shadow: 0px 0px 4px $blend, 0 0 25px $blend, 0 0 5px $blend;
+  text-shadow: 2px 2px 2px black;
   opacity: 1;
 
   &:after {
