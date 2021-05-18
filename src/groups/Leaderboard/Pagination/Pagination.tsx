@@ -23,8 +23,12 @@ export function Pagination() {
     const NUM_STUDENTS = sortedLeaderboard.length;
     const PAGE_ARRAY: Array<number> = Array.from(new Array(Math.ceil(NUM_STUDENTS / ROWS_PER_PAGE)), (_, index) => index + 1);
 
-    function calcTrophy(rank: number) {
-        rank += 1;
+    let prevStudentNp = 0;
+
+    function calcTrophy(rank: number, studentNp: number) {
+        if (prevStudentNp !== studentNp) rank += 1;
+
+        prevStudentNp = studentNp;
 
         const img = (src: string, altTitle: string, className = styles.rankImage) => <img src={src} alt={altTitle} title={altTitle} className={className}/>;
         
@@ -80,7 +84,7 @@ export function Pagination() {
 
                     return (
                         <div className={'row'} key={index}>
-                            <span className={'col'} style={{maxWidth: "5%", marginLeft: "1rem", marginRight: "2.8rem", alignSelf: "center"}}> {calcTrophy(index)} </span>
+                            <span className={'col'} style={{maxWidth: "5%", marginLeft: "1rem", marginRight: "2.8rem", alignSelf: "center"}}> {calcTrophy(index, STUDENT_NP)} </span>
                             <span className={'col'} style={{fontWeight: 700, alignSelf: "center"}}> {STUDENT_NAME} </span>
                             <span className={'col'} style={{fontFamily: "monospace", fontSize: "1.5rem", marginRight: "11rem", alignSelf: "center", alignItems: "flex-end", textAlign:"right"}}> {STUDENT_NP} </span>
                         </div>
