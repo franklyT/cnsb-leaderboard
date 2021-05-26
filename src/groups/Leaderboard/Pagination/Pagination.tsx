@@ -80,13 +80,17 @@ export function Pagination() {
                     if (index < (startIndex * ROWS_PER_PAGE)) return null;
                     if (index >= (startIndex * ROWS_PER_PAGE) + ROWS_PER_PAGE) return null;
 
-                    const [STUDENT_NAME, STUDENT_NP] = Object.values(student);
+                    const [STUDENT_NAME, STUDENT_NP, STUDENT_NP_CURRENT] = Object.values(student);
 
                     return (
                         <div className={'row'} key={index}>
                             <span className={'col'} style={{maxWidth: "5%", marginLeft: "1rem", marginRight: "2.8rem", alignSelf: "center"}}> {calcTrophy(index, STUDENT_NP)} </span>
                             <span className={'col'} style={{fontWeight: 700, alignSelf: "center"}}> {STUDENT_NAME} </span>
-                            <span className={'col'} style={{fontFamily: "monospace", fontSize: "1.5rem", marginRight: "11rem", alignSelf: "center", alignItems: "flex-end", textAlign:"right"}}> {STUDENT_NP} </span>
+                            <span className={`col ${styles.npContainer}`} style={{color: "black", cursor: "pointer", fontFamily: "monospace", fontSize: "1.5rem", marginRight: "10.2rem", alignSelf: "center", alignItems: "flex-end", textAlign:"right"}}> 
+                                {STUDENT_NP}
+                                <span className={`${styles.adjustedNP}`}> CURRENT: {STUDENT_NP_CURRENT} </span>
+                            </span>
+
                         </div>
                     )
                 })}

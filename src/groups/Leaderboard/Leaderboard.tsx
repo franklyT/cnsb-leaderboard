@@ -38,7 +38,10 @@ function Leaderboard() {
 
     return (
         <div className={styles.flex}>
-            <Labels labels={[["Rank", { maxWidth: '1%' }], ["Student Name", { maxWidth: '40%' }], ["Ninja Points", { marginLeft: "10rem", maxWidth: '100%' }]]} />
+            <div style={{alignItems: "center", width: "fit-content", marginTop: "1rem", marginBottom: "1rem", fontStyle: "italic", marginLeft: "auto", marginRight: "auto"}}> 
+                (Tip: Mouse over your points for current total!)
+            </div>
+            <Labels labels={[["Rank", { maxWidth: '1%' }], ["Student Name", { maxWidth: '40%' }], ["Ninja Points (All Time)", { marginLeft: "10rem", maxWidth: '100%' }]]} />
             {sortedLeaderboard.length > 1 || <Loader />}
             <Pagination />
         </div>

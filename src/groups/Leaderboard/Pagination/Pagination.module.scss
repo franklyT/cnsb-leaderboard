@@ -1,3 +1,8 @@
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -6,11 +11,6 @@
 
 .writtenPage {
     animation: fadeIn 0.4s ease-in;
-
-    @keyframes fadeIn {
-        0% {opacity:0;}
-        100% {opacity:1;}
-      }
 }
 
 .tableContainer {
@@ -55,4 +55,24 @@
   height: calc(100%);
   margin-left: -0.28rem;
   transform: translateZ(0);
+}
+
+.adjustedNP {
+    color: white;
+    font-size: 0.8rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-left: 1rem;
+    // margin-top: -0.1rem; // correct centering
+
+    transition: 1s opacity;
+    opacity: 0;
+}
+
+.npContainer {
+  &:hover .adjustedNP {
+      opacity: 1;
+  }
 }
