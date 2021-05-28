@@ -8,6 +8,7 @@ import Rewards from "./Rewards/Rewards";
 import { MenuContextProvider } from "../shared/contexts/MenuContext";
 import { ActivePage } from "./Toolbar/ToolbarEnums";
 import { Toolbar } from "./Toolbar/Toolbar";
+import Ranks from "./Ranks/Ranks";
 
 export function App() {
   const [sortedLeaderboard, setSortedLeaderboard] = useState([[]] as any[][]);
@@ -20,8 +21,10 @@ export function App() {
           <Leaderboard />
         </UIContextProvider>
       );
-    } else {
+    } else if (activeMenu === ActivePage.rewards) {
       return <Rewards />;
+    } else if (activeMenu === ActivePage.ranks) {
+      return <Ranks />;
     }
   }
 

@@ -1,4 +1,5 @@
 export enum ActivePage {
     leaderboard = "LEADERBOARD",
-    rewards = "REWARDS"
+    rewards = "REWARDS",
+    ranks = "RANKS"
 }
